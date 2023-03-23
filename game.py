@@ -20,16 +20,21 @@ for i in range(0, times):
     number_1 = randrange(10)
     number_2 = randrange(10)
     operator = choice(operators)
+
+    if (operator == "/") and (number_2 == 0):
+        number_2 = randrange(1, 10)
+
+
     # Se imprime la cuenta.
     print(f"{i+1}- ¿Cuánto es {number_1} {operator} {number_2}?")
     # Le pedimos al usuario el resultado
-    result = int(input("resultado: "))
+    result = float(input("resultado: "))
 
     match operator:
         case "+": booleano = (result == (number_1 + number_2))
         case "-": booleano = (result == (number_1 - number_2))
         case "*": booleano = (result == (number_1 * number_2))
-        case "/": booleano = (result == (number_1 / number_2))
+        case "/": booleano = (result == round(number_1 / number_2, 2))
 
     if booleano:
         print("Correcto")
