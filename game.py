@@ -23,18 +23,23 @@ for i in range(0, times):
 
     if (operator == "/") and (number_2 == 0):
         number_2 = randrange(1, 10)
+    # verifico que no haya error con la división por cero
 
 
     # Se imprime la cuenta.
     print(f"{i+1}- ¿Cuánto es {number_1} {operator} {number_2}?")
+
     # Le pedimos al usuario el resultado
-    result = float(input("resultado: "))
+    result = float(input("resultado (si es necesario, redondear a 2 decimales): "))
+    # uso float (en vez de int) para que tome todos los decimales al ingresar el
+    # resultado y que no sea truncado al entero
 
     match operator:
         case "+": booleano = (result == (number_1 + number_2))
         case "-": booleano = (result == (number_1 - number_2))
         case "*": booleano = (result == (number_1 * number_2))
         case "/": booleano = (result == round(number_1 / number_2, 2))
+        # uso round para que redondee el resultado a 2 decimales
 
     if booleano:
         print("Correcto")
@@ -53,5 +58,5 @@ total_time = end_time - init_time
 # Mostramos ese tiempo en segundos.
 print(f"\n Tardaste {total_time.seconds} segundos.")
 
-print(f"\n Correctas " ,correctas)
-print(f"\n Incorrectas ",incorrectas)
+print(f"\n Correctas: " ,correctas)
+print(f"\n Incorrectas: ",incorrectas)
