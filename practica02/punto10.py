@@ -21,7 +21,6 @@ def punto4_promedio_mas_alto(dicc_promedios):
 def punto5_nota_mas_baja(diccionario):
   return min(diccionario, key= lambda estu: min(diccionario[estu])) # para que devuelva solo el nombre
 
-
 nombres = ''' 'Agustin', 'Alan', 'Andrés', 'Ariadna', 'Bautista', 'CAROLINA', 'CESAR', 'David',
 'Diego', 'Dolores', 'DYLAN', 'ELIANA', 'Emanuel', 'Fabián', 'Facundo', 'Francsica', 
 'FEDERICO', 'Fernanda', 'GONZALO', 'Gregorio', 'Ignacio', 'Jonathan', 'Joaquina', 'Jorge',
@@ -42,12 +41,12 @@ lista = armar_lista(nombres) # primero armo una lista en limpio con los nombres 
 
 estudiantes = punto1_generar(lista, notas_1, notas_2) # PUNTO 1 -> llamo a la funcion que genera un diccionario, con los nombres como claves, y ambas notas como valores
 
-promedios = punto2_promedio(estudiantes) # PUNTO 2 -> llamo a la funcion que utiliza el diccionario anteriormente creado, genera uno nuevo con el promedio de ambas notas
+promedios = punto2_promedio(estudiantes) # PUNTO 2 -> llamo a la funcion que utilizando el diccionario anteriormente creado, genera uno nuevo con el promedio de ambas notas
 
-print(f"El promedio general del curso es de: {round(punto3_promedio_general(promedios), 3)}") # PUNTO 3 -> llamo a la funcion que me devuelve un promedio de todos los promedios
+print(f"El promedio general del curso es de: {round(punto3_promedio_general(promedios), 3)}") # PUNTO 3 -> llamo a la funcion que me devuelve un promedio de todos los promedios, rendondeado a 3 decimales
 
-nombre_max_promedio = punto4_promedio_mas_alto(promedios) # PUNTO 4 -> llamo a la funcion que retorna el nombre y la nota de aquella persona con el mayor promedio
+nombre_max_promedio = punto4_promedio_mas_alto(promedios) # PUNTO 4 -> llamo a la funcion que retorna el nombre de aquella persona con el mayor promedio
 print(f"El estudiante con la nota promedio mas alta, de {promedios.get(nombre_max_promedio)}, es {nombre_max_promedio}")
 
-nombre_min = punto5_nota_mas_baja(estudiantes) # PUNTO 5 -> llamo a la funcion que retorna el nombre y la nota de aquella persona con la nota más baja
+nombre_min = punto5_nota_mas_baja(estudiantes) # PUNTO 5 -> llamo a la funcion que retorna el nombre de aquella persona con la nota más baja
 print(f"El estudiante con la nota mas baja, de {min(estudiantes.get(nombre_min))}, es {nombre_min}")
